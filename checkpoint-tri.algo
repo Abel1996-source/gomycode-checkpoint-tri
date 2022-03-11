@@ -1,0 +1,30 @@
+FUNCTION triInsertion(arr : ARRAY_OF INTEGER) : INTEGER
+VAR
+    i,tempo,j: INTEGER;
+BEGIN
+    FOR i FROM 0 TO arr.length-1 STEP 1  DO
+        FOR j FROM 0 TO arr.length-1 STEP 1  DO
+            IF (arr[j] > arr[j+1]) THEN
+            tempo:=arr[j];
+            arr[j]:=arr[j+1];
+            arr[j+1]:=tempo;
+        END_IF
+        END_FOR
+    END_FOR
+    RETURN value ;
+END
+
+ALGORITHM De_Tri_par_Insertion
+VAR
+    i,nb:INTEGER;
+    arr : ARRAY_OF INTEGER[10];
+BEGIN
+    i:=0;
+    REPEAT
+        Write("Entrez les élements de votre tableau");
+        Read(nb);
+        i:=i+1;
+    UNTIL (i < arr.length)
+    
+    triInsertion(arr);
+END
